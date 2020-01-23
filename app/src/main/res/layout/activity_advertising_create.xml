@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingcreate.AdvertisingCreateViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/toolbar_advertising_create"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/ib_advertising_create_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:background="@color/transparent"
+                android:onClick="@{() -> viewModel.onClickBack()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/ib_advertising_create_txt"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/advertising_create"
+                android:textSize="@dimen/font_size_xlarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ib_advertising_create_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_advertising_x"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toolbar_advertising_create"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/gray_200" />
+
+        <ScrollView
+            android:id="@+id/sv_advertising_create"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/v_advertising_x"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_advertising_category_title"
+                        style="@style/AppTheme.TextViewCreate"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:text="@string/category"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_advertising_category_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_advertising_category_value"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:hint="@string/choose"
+                        android:onClick="@{() -> viewModel.openCategoryList()}"
+                        android:text="@{viewModel.categoryName}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ib_advertising_category_delete"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_advertising_category_title" />
+
+                    <ImageButton
+                        android:id="@+id/ib_advertising_category_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:background="@color/transparent"
+                        android:onClick="@{() -> viewModel.onClearCategory()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_advertising_category_value"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_advertising_category_title"
+                        android:tint="@color/red_600"
+                        app:srcCompat="@drawable/ic_delete"
+                       />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_advertising_title"
+                        style="@style/AppTheme.TextViewCreate"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:text="@string/advertising_title"
+                        app:layout_constraintBottom_toTopOf="@+id/etx_advertising_title_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etx_advertising_title_value"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:hint="@string/advertising_title_hint"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_advertising_title" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/v_advertising_x1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200"
+                    android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}"/>
+
+
+                <RadioGroup
+                    android:id="@+id/rg_advertising_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}">
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_seller"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/act_customer" />
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_customer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/act_seller" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/v_advertising_x2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <TextView
+                    android:id="@+id/txt_advertising_image"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/advertising_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_img_advertising_number1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cl_img_advertising_number2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/cl_advertising_number1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintBottom_toTopOf="@+id/img_advertising_delete1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number1"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            bitmap="@{viewModel.imgeUrl1}"
+                            android:onClick="@{() -> viewModel.onAddImage(1)}"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number1_icon"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onAddImage(1)}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imgeIcon1 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/img_advertising_delete1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onDeleteImage1()}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imge1 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_number1"
+                            app:srcCompat="@drawable/ic_garbage" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_img_advertising_number2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cl_img_advertising_number3"
+                        app:layout_constraintStart_toEndOf="@+id/cl_img_advertising_number1">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/cl_advertising_number2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintBottom_toTopOf="@+id/img_advertising_delete2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number2"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            bitmap="@{viewModel.imgeUrl2}"
+                            android:onClick="@{() -> viewModel.onAddImage(2)}"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number_icon2"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onAddImage(2)}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imgeIcon2 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+                        </android.support.constraint.ConstraintLayout>
+
+
+                        <ImageView
+                            android:id="@+id/img_advertising_delete2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onDeleteImage2()}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imge2 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_number2"
+                            app:srcCompat="@drawable/ic_garbage" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_img_advertising_number3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cl_img_advertising_number4"
+                        app:layout_constraintStart_toEndOf="@+id/cl_img_advertising_number2">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/cl_advertising_number3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintBottom_toTopOf="@+id/img_advertising_delete3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number3"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            bitmap="@{viewModel.imgeUrl3}"
+                            android:onClick="@{() -> viewModel.onAddImage(3)}"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number_icon3"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onAddImage(3)}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imgeIcon3 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/img_advertising_delete3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onDeleteImage3()}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imge3 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_number3"
+                            app:srcCompat="@drawable/ic_garbage" />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_img_advertising_number4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cl_img_advertising_number3">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/cl_advertising_number4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintBottom_toTopOf="@+id/img_advertising_delete4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number4"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            bitmap="@{viewModel.imgeUrl4}"
+                            android:onClick="@{() -> viewModel.onAddImage(4)}"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        <ImageView
+                            android:id="@+id/img_advertising_number_icon4"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onAddImage(4)}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imgeIcon4 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_add_image" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/img_advertising_delete4"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:background="@color/transparent"
+                            android:cropToPadding="true"
+                            android:onClick="@{() -> viewModel.onDeleteImage4()}"
+                            android:scaleType="fitCenter"
+                            android:visibility="@{viewModel.imge4 ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_number4"
+                            app:srcCompat="@drawable/ic_garbage" />
+                    </android.support.constraint.ConstraintLayout>
+                </android.support.constraint.ConstraintLayout>
+
+
+                <View
+                    android:id="@+id/v_advertising_x3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <RadioGroup
+                    android:id="@+id/rg_advertising_create_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_small">
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/new_goods" />
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_old"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/old" />
+
+                </RadioGroup>
+
+
+
+                <View
+                    android:id="@+id/v_advertising_x5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200"
+                    android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}"/>
+
+                <TextView
+                    android:id="@+id/txt_advertising_price"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/price_type"
+                    android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}"/>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}">
+
+                    <Spinner
+                        style="@style/SpinnerTheme"
+                        android:id="@+id/sp_advertising_price_type"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:spinnerMode="dialog"
+                        android:gravity="end"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_advertising_price_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etx_advertising_price_value"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:hint="@string/price_hint"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/sp_advertising_price_type"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:visibility="@{viewModel.actPriceShow ? View.VISIBLE : View.GONE}"
+                        />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/v_advertising_x6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_car"
+                    layout="@layout/activity_advertising_dt_car"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.carDeatailsShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_agency"
+                    layout="@layout/activity_advertising_dt_agency"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.agencyShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_appliance"
+                    layout="@layout/activity_advertising_dt_appliance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.applianceShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_bicycle"
+                    layout="@layout/activity_advertising_dt_bicycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.bicycleShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_estate"
+                    layout="@layout/activity_advertising_dt_estate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.estateShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_trip"
+                    layout="@layout/activity_advertising_dt_trip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.tripShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_motor"
+                    layout="@layout/activity_advertising_dt_motor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.motorShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_mobile"
+                    layout="@layout/activity_advertising_dt_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.mobileShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_job"
+                    layout="@layout/activity_advertising_dt_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.jobShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_hcar"
+                    layout="@layout/activity_advertising_dt_hcar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.hCarShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_hotel"
+                    layout="@layout/activity_advertising_dt_hotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.hotelShow ? View.VISIBLE : View.GONE}"/>
+
+                <include
+                    app:viewModel="@{viewModel}"
+                    android:id="@+id/ic_advertising_furniture"
+                    layout="@layout/activity_advertising_dt_furniture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{viewModel.furnitureShow ? View.VISIBLE : View.GONE}"/>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{viewModel.accessoriesShow ? View.VISIBLE : View.GONE}">
+
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        style="@style/SpinnerTheme"
+                        android:id="@+id/sp_advertising_create_accessories"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:spinnerMode="dialog"
+                        android:gravity="end"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tx_advertising_create_accessories_title"
+                        style="@style/AppTheme.TextViewGray"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_very_small"
+                        android:text="@string/accessories_personal"
+                        app:layout_constraintBottom_toTopOf="@+id/sp_advertising_create_accessories"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{viewModel.productTypeShow ? View.VISIBLE : View.GONE}">
+
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        style="@style/SpinnerTheme"
+                        android:id="@+id/sp_advertising_create_product_type"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:spinnerMode="dialog"
+                        android:gravity="end"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tx_advertising_create_product_type"
+                        style="@style/AppTheme.TextViewGray"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_very_small"
+                        android:text="@string/product_type"
+                        app:layout_constraintBottom_toTopOf="@+id/sp_advertising_create_product_type"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/v_advertising_x4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_advertising_category_description"
+                        style="@style/AppTheme.TextViewCreate"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:text="@string/description"
+                        app:layout_constraintBottom_toTopOf="@+id/etx_advertising_description_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etx_advertising_description_value"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_l"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:gravity="top"
+                        android:hint="@string/advertising_description_hint"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:maxLines="10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_advertising_category_description" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/v_advertising_x10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <TextView
+                    android:id="@+id/txt_advertising_contact"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/contact_info" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/etx_advertising_contact_name"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:hint="@string/hint_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toTopOf="@+id/etx_advertising_contact_mobile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etx_advertising_contact_mobile"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:hint="@string/mobile"
+                        android:maxLength="11"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        app:layout_constraintBottom_toTopOf="@+id/etx_advertising_contact_tel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etx_advertising_contact_name" />
+
+                    <EditText
+                        android:id="@+id/etx_advertising_contact_tel"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:hint="@string/tel"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        app:layout_constraintBottom_toTopOf="@+id/etx_advertising_contact_email"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etx_advertising_contact_mobile" />
+
+                    <EditText
+                        android:id="@+id/etx_advertising_contact_email"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:hint="@string/email"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etx_advertising_contact_tel" />
+
+                </android.support.constraint.ConstraintLayout>
+
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_advertising_location_title"
+                        style="@style/AppTheme.TextViewCreate"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:text="@string/location"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_advertising_location_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_advertising_location_value"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height"
+                        android:hint="@string/choose"
+                        android:onClick="@{() -> viewModel.openCityList()}"
+                        android:text="@{viewModel.cityName}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ib_advertising_city_delete"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_advertising_location_title" />
+
+                    <ImageButton
+                        android:id="@+id/ib_advertising_city_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:background="@color/transparent"
+                        android:onClick="@{() -> viewModel.onClearCity()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_advertising_location_value"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_advertising_location_title"
+                        android:tint="@color/red_600"
+                        app:srcCompat="@drawable/ic_delete" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/v_advertising_x7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <RadioGroup
+                    android:id="@+id/rg_advertising_create_owner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_small">
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_main_owner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/main_owner" />
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_expert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/expert" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/v_advertising_x8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <TextView
+                    android:id="@+id/txt_advertising_type_special"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/advertising_special" />
+
+                <RadioGroup
+                    android:id="@+id/rg_advertising_create_advertising_special"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_small">
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_immediate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/immediate" />
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_auction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/auction" />
+
+                    <RadioButton
+                        android:id="@+id/rg_advertising_create_free"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/free" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/v_advertising_x9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/sw_advertising_create_send"
+                    style="@style/AppTheme.SwitchCompat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/send_advertising" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/sw_advertising_create_accept"
+                    style="@style/AppTheme.SwitchCompat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="8dp"
+                    android:checked="true"
+                    android:text="@string/accept_roll" />
+
+                <Button
+                    android:id="@+id/btn_advertising_create"
+                    style="@style/AppTheme.ButtonBlue"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:onClick="@{() -> viewModel.onClickSend()}"
+                    android:text="@string/send" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

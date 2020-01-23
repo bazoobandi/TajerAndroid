@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingcreate.AdvertisingCreateViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <Spinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_job_type_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_job_type_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/job_type_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_job_type_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <TextView
+                android:id="@+id/txt_advertising_job_location_title"
+                style="@style/AppTheme.TextViewCreate"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height_s"
+                android:text="@string/job_location"
+                app:layout_constraintBottom_toTopOf="@+id/txt_advertising_job_location_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_advertising_job_location_value"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:hint="@string/choose"
+                android:onClick="@{() -> viewModel.openCityListByJob()}"
+                android:text="@{viewModel.cityNameByJob}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ib_advertising_job_city_delete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_advertising_job_location_title" />
+
+            <ImageButton
+                android:id="@+id/ib_advertising_job_city_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:background="@color/transparent"
+                android:onClick="@{() -> viewModel.onClearCityByJob()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_advertising_location_value"
+                app:layout_constraintTop_toBottomOf="@+id/txt_advertising_location_title"
+                android:tint="@color/red_600"
+                app:srcCompat="@drawable/ic_delete" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <EditText
+                android:id="@+id/et_advertising_job_min_salary"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{viewModel.jobMinSalary}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tx_advertising_job_min_salary"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/min_salary"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_job_min_salary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <EditText
+                android:id="@+id/et_advertising_job_max_salary"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{viewModel.jobMaxSalary}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tx_advertising_job_max_salary"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/max_salary"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_job_max_salary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </LinearLayout>
+</layout>

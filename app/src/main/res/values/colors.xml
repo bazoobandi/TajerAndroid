@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorAccent">#FFD600</color>
+    <color name="dark_gray">#909090</color>
+    <color name="black_effective">#303030</color>
+    <color name="gray">#a9a9a9</color>
+
+
+    <color name="orange_100" >#FFCCBC</color>
+    <color name="orange_200" >#FFAB91</color>
+    <color name="orange_300" >#FF8A65</color>
+    <color name="orange_400" >#FF7043</color>
+    <color name="orange_500" >#FF5722</color>
+    <color name="orange_600" >#F4511E</color>
+    <color name="orange_700" >#E64A19</color>
+    <color name="orange_800" >#D84315</color>
+    <color name="orange_900" >#BF360C</color>
+
+    <color name="blue_100" >#BBDEFB</color>
+    <color name="blue_200" >#90CAF9</color>
+    <color name="blue_300" >#64B5F6</color>
+    <color name="blue_400" >#42A5F5</color>
+    <color name="blue_500" >#2196F3</color>
+    <color name="blue_600" >#1E88E5</color>
+    <color name="blue_700" >#1976D2</color>
+    <color name="blue_800" >#1565C0</color>
+
+
+    <color name="routes" >#80199c90</color>
+
+    <color name="gray_100" >#e9e9e9</color>
+    <color name="gray_200" >#d8d8d8</color>
+    <color name="gray_300" >#c2c2c2</color>
+    <color name="gray_400" >#afafb1</color>
+    <color name="gray_500" >#9a9a9b</color>
+    <color name="gray_600" >#878787</color>
+    <color name="gray_700" >#737375</color>
+    <color name="gray_800" >#5f5f62</color>
+    <color name="gray_900" >#4B4B4E</color>
+    <color name="gray_1000" >#3a3a3b</color>
+
+
+    <color name="green_800" >#558B2F</color>
+    <color name="green_600" >#7CB342</color>
+    <color name="green_700" >#689F38</color>
+
+
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="white_high_transparent">#81ffffff</color>
+    <color name="red">#e5ff3661</color>
+    <color name="red_600">#e53935</color>
+    <color name="red_error">#d32f2f</color>
+</resources>

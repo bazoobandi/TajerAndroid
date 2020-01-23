@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.option.createchannel.CreateChannelViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/toolbar_channel_create"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/ib_channel_create_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:background="@color/transparent"
+                android:onClick="@{() -> viewModel.onClickBack()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/ib_channel_create_txt"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/channel_create"
+                android:textSize="@dimen/font_size_xlarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ib_channel_create_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+        <ScrollView
+            android:id="@+id/sv_channel_create"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_channel_create"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_channel_create"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="@dimen/margin_very_small"
+                    android:background="@color/transparent"
+                    android:cropToPadding="true"
+                    android:onClick="@{() -> viewModel.onAddImage()}"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/etx_channel_create_title"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/ic_add_image" />
+
+                <EditText
+                    android:id="@+id/etx_channel_create_title"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/channel_create_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_channel_create"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_weight="3"/>
+            </android.support.constraint.ConstraintLayout>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_channel_create_title"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/category"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_channel_create_value"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_channel_create_value"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/choose"
+                    android:onClick="@{() -> viewModel.openCategoryList()}"
+                    android:text="@{viewModel.categoryName}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ib_channel_create_delete"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_channel_create_title" />
+
+                <ImageButton
+                    android:id="@+id/ib_channel_create_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:background="@color/transparent"
+                    android:onClick="@{() -> viewModel.onClearCategory()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_channel_create_value"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_channel_create_title"
+                    android:tint="@color/red_600"
+                    app:srcCompat="@drawable/ic_delete"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_channel_create_location_title"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/location"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_channel_create_location_value"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_channel_create_location_value"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/choose"
+                    android:onClick="@{() -> viewModel.openCityList()}"
+                    android:text="@{viewModel.cityName}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ib_advertising_city_delete"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_channel_create_location_title" />
+
+                <ImageButton
+                    android:id="@+id/ib_advertising_city_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:background="@color/transparent"
+                    android:onClick="@{() -> viewModel.onClearCity()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_channel_create_location_value"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_channel_create_location_title"
+                    android:tint="@color/red_600"
+                    app:srcCompat="@drawable/ic_delete" />
+
+            </android.support.constraint.ConstraintLayout>
+            <EditText
+                android:id="@+id/etx_channel_create_description"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/margin_very_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:hint="@string/description"
+                />
+            <EditText
+                android:id="@+id/etx_channel_create_address"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/margin_very_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:hint="@string/address"
+                />
+            <EditText
+                android:id="@+id/etx_channel_create_tel"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/margin_very_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:inputType="number"
+                android:hint="@string/tel"
+                />
+            <EditText
+                android:id="@+id/etx_channel_create_mobile"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/margin_very_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:inputType="number"
+                android:hint="@string/mobile"
+                />
+            <EditText
+                android:id="@+id/etx_channel_create_email"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/margin_very_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:hint="@string/hint_email"
+                />
+            <EditText
+                android:id="@+id/etx_channel_create_website"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/margin_very_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:hint="@string/website"
+                />
+            <Button
+                android:id="@+id/btn_channel_create"
+                style="@style/AppTheme.ButtonBlue"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:onClick="@{() -> viewModel.onClickCreate()}"
+                android:text="@string/channel_create" />
+        </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

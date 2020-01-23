@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.dialog.imageView.ImageViewShowViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_white_rounded"
+        android:layout_marginTop="@dimen/margin_small">
+
+        <ImageButton
+            android:id="@+id/ib_contact_info_close"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_normal"
+            android:background="@color/transparent"
+            android:onClick="@{() -> viewModel.onClickClose()}"
+            android:scaleType="center"
+            android:tint="@color/gray_700"
+            app:layout_constraintBottom_toTopOf="@+id/rv_dialog_image_view_show"
+            app:layout_constraintEnd_toStartOf="@+id/txt_contact_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_dialog_image_view_show"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_contact_info_close"
+            app:layout_constraintVertical_weight="1">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

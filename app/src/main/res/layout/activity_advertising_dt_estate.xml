@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingcreate.AdvertisingCreateViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(238)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(243))  ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_area"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateArea)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_area_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/area"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_area"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_roomNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_roomNumber"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_roomNumber_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/room_number"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_roomNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_age_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_age_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/age_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_age_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_floor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_floor"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateFloor)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_floor_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/floor"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_floor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_building_floor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_building_floor"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateBuildingFloor)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_building_floor_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/building_floor"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_building_floor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_unit_floor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_unit_floor"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateUnitInFloor)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_unit_floor_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/unit_floor"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_unit_floor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_facing_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_facing_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_facing_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/facing"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_facing_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <Spinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_floor_covering_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_floor_covering_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/floor_covering"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_floor_covering_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_cabinet_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_cabinet_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_cabinet_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/cabinet_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_cabinet_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <Spinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_wc_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_wc_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/wc_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_wc_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_heating_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_heating_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/heating_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_heating_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_cooling_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_cooling_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_cooling_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/cooling_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_cooling_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(229))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) ? View.VISIBLE : View.GONE}">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_estate_view_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_view_name"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/view_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_estate_view_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_land_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{  viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(229)) ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_land_area"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateLandArea)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_land_area_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/land_area"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_land_area"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_land_length"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{  viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(229)) ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_land_length"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateLandLength)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_land_length"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/land_length"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_land_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_alleyWidth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(229)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))  ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_alleyWidth"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateAlleyWidth)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_alleyWidth_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/alley_width"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_alleyWidth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_shop_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242))  ? View.VISIBLE : View.GONE}">
+
+            <EditText
+                android:id="@+id/et_advertising_estate_shop_height"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:inputType="number"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.estateShopHeight)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_estate_shop_height"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/shop_height"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_estate_shop_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_advertising_x11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_weight="1"
+            android:background="@color/gray_500" />
+
+        <TextView
+            style="@style/AppTheme.TextViewGray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:text="@string/possibilities"
+            android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242)) ? View.VISIBLE : View.GONE}"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_balcony"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_balcony"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_small"
+                android:checked="@{viewModel.estateBalcony}"
+                android:text="@string/balcony"
+                android:gravity="center_vertical|start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/sw_advertising_estate_central_antenna"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227)) || viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237)) ? View.VISIBLE : View.GONE}"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_central_antenna"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_small"
+                android:checked="@{viewModel.estatecCentralAntenna}"
+                android:text="@string/central_antenna"
+                android:gravity="center_vertical|start"
+                app:layout_constraintEnd_toStartOf="@+id/sw_advertising_estate_door_remote"
+                app:layout_constraintStart_toEndOf="@+id/sw_advertising_estate_balcony"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_door_remote"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center_vertical|start"
+                android:checked="@{viewModel.estateDoorRemote}"
+                android:text="@string/door_remote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sw_advertising_estate_central_antenna"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_parking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_depot"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center_vertical|start"
+                android:checked="@{viewModel.estateHomeDepot}"
+                android:text="@string/depot"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/sw_advertising_estate_parking"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_parking"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center_vertical|start"
+                android:checked="@{viewModel.estateParking}"
+                android:text="@string/parking"
+                app:layout_constraintEnd_toStartOf="@+id/sw_advertising_estate_lift"
+                app:layout_constraintStart_toEndOf="@+id/sw_advertising_estate_depot"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_lift"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|start"
+                android:layout_marginStart="@dimen/margin_small"
+                android:checked="@{viewModel.estatelLift}"
+                android:text="@string/lift"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sw_advertising_estate_parking"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_estate_tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_tel"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center_vertical|start"
+                android:checked="@{viewModel.estateTel}"
+                android:text="@string/tel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/sw_advertising_estate_iPhone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(242))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(237))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/sw_advertising_estate_iPhone"
+                style="@style/AppTheme.SwitchCompat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|start"
+                android:layout_marginStart="@dimen/margin_small"
+                android:checked="@{viewModel.estateVedioIPhone}"
+                android:text="@string/iPhone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sw_advertising_estate_tel"
+                android:visibility="@{viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(228))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(233))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(241))||viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(236))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(232))|| viewModel.categoryId.equals(NumberFormatter.convertIntegerToString(227))  ? View.VISIBLE : View.GONE}"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

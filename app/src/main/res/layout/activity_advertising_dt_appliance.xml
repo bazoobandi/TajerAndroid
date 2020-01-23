@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingcreate.AdvertisingCreateViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_appliance_brandName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_appliance_brandName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_appliance_brandName_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/brand_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_appliance_brandName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_appliance_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_appliance_color"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_appliance_color_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/color"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_appliance_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_appliance_typeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_appliance_typeName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_appliance_typeName_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/type"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_appliance_typeName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

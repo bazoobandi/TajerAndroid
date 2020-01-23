@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+
+
+    <dimen name="font_size_very_small">8sp</dimen>
+    <dimen name="font_size_middle_small">10sp</dimen>
+    <dimen name="font_size_small">12sp</dimen>
+    <dimen name="font_size_normal">14sp</dimen>
+    <dimen name="font_size_large">16sp</dimen>
+    <dimen name="font_size_xlarge">20sp</dimen>
+    <dimen name="font_size_xxlarge">24sp</dimen>
+    <dimen name="font_size_xxxlarge">28sp</dimen>
+    <dimen name="font_size_titles">20sp</dimen>
+
+    <dimen name="radius_10dp">10dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="radius_alert">5dp</dimen>
+    <dimen name="padding_common">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="radius_5dp">5dp</dimen>
+    <dimen name="radius_2dp">2dp</dimen>
+    <dimen name="radius_1dp">1dp</dimen>
+
+    <dimen name="icon_height" >40dp</dimen>
+    <dimen name="item_height" >60dp</dimen>
+    <dimen name="btn_height" >60dp</dimen>
+    <dimen name="edt_height" >50dp</dimen>
+    <dimen name="edt_height_s" >40dp</dimen>
+    <dimen name="edt_height_l" >100dp</dimen>
+    <dimen name="elevation">5dp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="stroke_picture">3dp</dimen>
+    <dimen name="margin_very_small">4dp</dimen>
+    <dimen name="margin_very_very_small">2dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="max_line">3dp</dimen>
+
+    <dimen name="btn_option_height">40dp</dimen>
+    <dimen name="edt_width_verify">40dp</dimen>
+
+    <dimen name="txt_height">30dp</dimen>
+    <dimen name="txt_height_larg">100dp</dimen>
+    <dimen name="txt_width">0dp</dimen>
+    <dimen name="stroke_8dp">8dp</dimen>
+    <dimen name="stroke_2dp">2dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="statusBarSize">25dp</dimen>
+</resources>

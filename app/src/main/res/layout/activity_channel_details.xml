@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.channelDetails.ChannelDetailsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/toolbar_channel_details"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/ib_channel_details_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:background="@color/transparent"
+                android:onClick="@{() -> viewModel.onClickBack()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/ib_channel_details_txt"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/channel_details"
+                android:textSize="@dimen/font_size_xlarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ib_channel_details_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_channel_details_x"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toolbar_channel_details"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/gray_200" />
+
+        <ScrollView
+            android:id="@+id/sv_channel_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/v_channel_details_x"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_item_channel_details"
+                        bitmap="@{viewModel.channelUlr}"
+                        android:layout_width="0dp"
+                        android:layout_height="67dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:background="@color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tx_item_channel_details_title"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tx_item_channel_details_title"
+                        style="@style/AppTheme.TextViewBlackBold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLength="50"
+                        android:maxLines="1"
+                        android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.channelTitle)}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toEndOf="@+id/img_item_channel_details"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/v_channel_details_x1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <!--<android.support.constraint.ConstraintLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/txt_channel_details_desc"-->
+                        <!--style="@style/AppTheme.TextViewChannelTitle"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/channel_desc"-->
+                        <!--app:layout_constraintBottom_toTopOf="@+id/etx_channel_details_desc_value"-->
+                        <!--app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--app:layout_constraintStart_toStartOf="parent"-->
+                        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_desc_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@{viewModel.channelDesc}"
+                        android:textColor="@color/black_effective" />
+
+                <!--</android.support.constraint.ConstraintLayout>-->
+
+                <View
+                    android:id="@+id/v_channel_details_x2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_weight="1"
+                    android:background="@color/gray_200" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_username"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/channel_id"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_channel_details_username_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="1" />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_username_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@{viewModel.channelId}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel_details_username"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="3" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_very_small">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_mobile"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mobile"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_channel_details_mobile_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="1" />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_mobile_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.channelMobile}"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel_details_mobile"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="3" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_very_small">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_tel"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tel"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_channel_details_tel_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_tel_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.channelTel}"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel_details_tel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="3"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_very_small">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_email"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_channel_details_email_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="1" />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_email_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.channelEmail}"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel_details_email"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="3" />
+
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_very_small">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_website"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/website"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_channel_details_website_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="1" />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_website_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.channelWebSite}"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel_details_website"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="3" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_very_small">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_city"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/city"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/etx_channel_details_city_value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="1" />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_city_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.channelCity}"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_channel_details_city"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_weight="3" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_very_small">
+
+                    <TextView
+                        android:id="@+id/txt_channel_details_address"
+                        style="@style/AppTheme.TextViewChannelTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/channel_address"
+                        android:gravity="start"
+                        app:layout_constraintBottom_toTopOf="@+id/etx_channel_details_address_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/etx_channel_details_address_value"
+                        style="@style/AppTheme.TextViewChannelValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@{viewModel.channelAddress}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_channel_details_address" />
+
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/btn_channel_details_show"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        style="@style/AppTheme.ButtonBlue"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:onClick="@{() -> viewModel.onClickShowDetails()}"
+                        android:text="@string/show_details"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_channel_details_join"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <Button
+                        android:id="@+id/btn_channel_details_join"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        style="@style/AppTheme.ButtonGray"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:onClick="@{() -> viewModel.onClickJoin()}"
+                        android:text="@string/join_channel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btn_channel_details_show"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingDetails.AdvertisingDetailsViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_producYear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_very_small"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_kmsDriven"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_producYear_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/producYear"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_car_producYear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_car_producYear"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_kmsDriven"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_very_small"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_insurance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_producYear">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_kmsDriven_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/kms_driven"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_car_kmsDriven"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/et_advertising_car_kmsDriven"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.kmsDriven)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_insurance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_very_small"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_insurance_discount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_kmsDriven">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_insurance_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/insurance_valid_till"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_car_insurance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_advertising_car_insurance"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.insuranceValidTill)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_insurance_discount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_brandName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_insurance">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_insurance_discount"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.insuranceDiscount)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_insurance_discount_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_insurance_discount_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/insurance_discount"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_insurance_discount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_brandName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_insurance_discount">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_brandName"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.brandName)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_brandName_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_brandName_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/brand_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_brandName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_color"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_fualType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_brandName">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_color"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.color)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_color_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_color_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_fualType"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_bodyStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_color">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_fualType"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.color)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_fualType_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_fualType_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/fualType"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_fualType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_bodyStatus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_insideColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_fualType">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_bodyStatus"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.color)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_bodyStatus_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_bodyStatus_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/bodyStatus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_bodyStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_insideColor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_transmission"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_bodyStatus">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_insideColor"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.insideColor)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_insideColor_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_insideColor_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/insideColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_insideColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_transmission"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_plaque"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_insideColor">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_transmission"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.transmission)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_transmission_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_transmission_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/transmission"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_transmission"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_plaque"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_car_subModelName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_transmission">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_plaque"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.plaque)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_plaque_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_plaque_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/plaque"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_plaque"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_car_subModelName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_advertising_car_plaque">
+
+            <TextView
+                android:id="@+id/tx_advertising_car_subModelName"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.subModelName)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_advertising_car_subModelName_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_car_subModelName_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/subModelName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_car_subModelName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

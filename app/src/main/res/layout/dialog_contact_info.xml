@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.dialog.contactInfo.ContactInfoViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_rounded">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_contact_info_close"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/v_contact_info_x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/ib_contact_info_close"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_margin="@dimen/margin_normal"
+                android:background="@color/transparent"
+                android:onClick="@{() -> viewModel.onClickClose()}"
+                android:scaleType="center"
+                android:tint="@color/gray_700"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txt_contact_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_close" />
+
+            <TextView
+                android:id="@+id/txt_contact_info"
+                style="@style/AppTheme.TextViewRed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:gravity="center"
+                android:text="@string/contact_info"
+                android:textSize="@dimen/font_size_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ib_contact_info_close"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_contact_info_x"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_weight="1"
+            android:background="@color/gray_200"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contact_info_mobile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_contact_info_close" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_contact_info_mobile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_normal"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contact_info_tel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_contact_info_x"
+            android:onClick="@{() -> viewModel.onClickCallMobile()}"
+            android:background="@color/gray_100">
+
+            <TextView
+                android:id="@+id/tx_contact_info_mobile"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.advertisingMobile)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_contact_info_mobile_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_contact_info_mobile_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/mobile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_contact_info_mobile"
+                app:layout_constraintStart_toEndOf="@+id/img_contact_info_mobile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_contact_info_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_very_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_contact_info_mobile_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_contact_info_tel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_normal"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contact_info_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_contact_info_mobile"
+            android:onClick="@{() -> viewModel.onClickCallTel()}"
+            android:background="@color/gray_100">
+
+            <TextView
+                android:id="@+id/tx_contact_info_tel"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.advertisingTel)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_contact_info_tel_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_contact_info_tel_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/tel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_contact_info_tel"
+                app:layout_constraintStart_toEndOf="@+id/img_contact_info_tel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_contact_info_tel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_very_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_contact_info_tel_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_contact_info_email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_normal"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contact_info_fata"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_contact_info_tel"
+            android:background="@color/gray_100">
+
+            <TextView
+                android:id="@+id/tx_contact_info_email"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:text="@{viewModel.advertisingEmail}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tx_contact_info_email_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_contact_info_email_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_contact_info_email"
+                app:layout_constraintStart_toEndOf="@+id/img_contact_info_email"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_contact_info_email"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_very_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_message"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tx_contact_info_email_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_contact_info_fata"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@+id/cl_contact_info_email"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            style="@style/AppTheme.TextViewGray"
+            android:id="@+id/txt_contact_info_fata"
+            android:padding="@dimen/margin_normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_small"
+            android:text="@string/fata_message"
+            />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

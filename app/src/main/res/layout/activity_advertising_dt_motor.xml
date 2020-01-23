@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingcreate.AdvertisingCreateViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_motor_product_year"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dialog"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_motor_start_date_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/motor_product_year"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_motor_product_year"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <EditText
+                android:id="@+id/et_advertising_motor_kms_driven"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{viewModel.motorKmsDriven}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tx_advertising_motor_kms_driven"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/kms_driven"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_motor_kms_driven"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_motor_brand_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dialog"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_motor_address_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/brand_name"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_motor_brand_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_motor_model_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small"
+            android:visibility="gone">
+
+            <Spinner
+                style="@style/SpinnerTheme"
+                android:id="@+id/sp_advertising_motor_model_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edt_height"
+                android:layout_margin="@dimen/margin_very_small"
+                android:spinnerMode="dropdown"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_motor_model_name_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/model"
+                app:layout_constraintBottom_toTopOf="@+id/sp_advertising_motor_model_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+
+            <EditText
+                android:id="@+id/et_advertising_motor_insurance_valid_till"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{viewModel.motorInsuranceValidTill}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_motor_insurance_valid_till_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/insurance_valid_till"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_motor_insurance_valid_till"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:layout_marginEnd="@dimen/margin_very_small">
+
+            <EditText
+                android:id="@+id/et_advertising_motor_insurance_discount"
+                style="@style/AppTheme.EditText"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:text="@{viewModel.motorInsuranceDiscount}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_advertising_motor_insurance_discount_title"
+                style="@style/AppTheme.TextViewGray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:text="@string/insurance_discount"
+                app:layout_constraintBottom_toTopOf="@+id/et_advertising_motor_insurance_discount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

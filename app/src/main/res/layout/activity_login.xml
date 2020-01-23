@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.register.login.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_login_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            style="@style/AppTheme.TextViewWhite"
+            android:id="@+id/tv_login_title"
+            android:text="@string/entry_account"
+            android:textSize="@dimen/font_size_titles"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/margin_large">
+
+            <ImageView
+                android:id="@+id/iv_login_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/icon"
+                />
+
+            <TextView
+                style="@style/AppTheme.TextViewWhite"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_4dp"
+                android:layout_marginStart="@dimen/padding_common"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:text="@string/phone_number"
+                android:textSize="@dimen/font_size_large"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_login_username"
+                android:inputType="phone"
+                android:digits="+0123456789"
+                android:maxLength="11"
+                android:hint="@string/hint_phone_number"
+                android:nextFocusDown="@id/edt_login_password"
+                android:imeOptions="actionNext"
+                android:maxLines="1" />
+
+            <TextView
+                style="@style/AppTheme.TextViewWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginBottom="@dimen/margin_4dp"
+                android:layout_marginStart="@dimen/padding_common"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:text="@string/password"
+                android:textSize="@dimen/font_size_large"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_login_password"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:hint="@string/hint_password"
+                android:maxLines="1"
+                />
+
+            <Button
+                style="@style/AppTheme.ButtonGray"
+                android:id="@+id/btnLogin"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:onClick="@{() -> viewModel.onClickLogin()}"
+                android:text="@string/login"/>
+
+            <Button
+                style="@style/AppTheme.ButtonFlat"
+                android:padding="@dimen/padding_small"
+                android:text="@string/forgot_password_question"
+                android:onClick="@{() -> viewModel.onClickForgotPassword()}"/>
+
+        </LinearLayout>
+
+        <Button
+            style="@style/AppTheme.ButtonFlat"
+            android:padding="@dimen/padding_small"
+            android:text="@string/sign_up_question"
+            android:onClick="@{() -> viewModel.onClickSignUp()}"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</layout>

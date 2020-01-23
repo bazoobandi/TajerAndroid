@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zbam.tajer.utils.NumberFormatter" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingDetails.AdvertisingDetailsViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_advertising_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/sv_advertising_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/ib_advertising_details_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:background="@color/transparent"
+                    android:onClick="@{() -> viewModel.onClickBack()}"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <!--<TextView-->
+                    <!--style="@style/AppTheme.TextViewBlack"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:text="@string/advertising_details"-->
+                    <!--android:textSize="@dimen/font_size_xlarge" />-->
+
+                <TextView
+                    android:id="@+id/tx_advertising_details_title"
+                    style="@style/AppTheme.TextViewBlackBold"
+                    android:layout_marginEnd="@dimen/margin_very_small"
+                    android:layout_centerInParent="true"
+                    android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.advertisingTitle)}"
+                    android:textSize="@dimen/font_size_normal" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:id="@+id/sv_advertising_details"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="1"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="90dp"
+            android:fillViewport="true"
+            android:requiresFadingEdge="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/cl_advertising_details_buttom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_advertising_details">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_advertising_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_advertising_details">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_advertising_details_img"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toTopOf="@+id/cl_advertising_details_others"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="1">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_advertising_details_others"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_very_small"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_weight="1">
+
+
+
+                    <LinearLayout
+                        android:id="@+id/cl_advertising_details_channel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/gray_100"
+                        app:layout_constraintBottom_toTopOf="@+id/tx_advertising_details_time"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:visibility="@{viewModel.channelShow ?View.VISIBLE : View.GONE}">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/img_advertising_details_channel"
+                                bitmap="@{viewModel.channelUlr}"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:background="@color/transparent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/tx_advertising_details_channel_title"
+                                app:layout_constraintHorizontal_weight="1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/tx_advertising_details_channel_title"
+                                style="@style/AppTheme.TextViewBlackBold"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:maxLength="50"
+                                android:maxLines="1"
+                                android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.channelName)}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_weight="3"
+                                app:layout_constraintStart_toEndOf="@+id/img_advertising_details_channel"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/tx_advertising_details_channel_address"
+                            style="@style/AppTheme.TextViewGray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:text="@{viewModel.channelAddress}"
+                            android:visibility="@{viewModel.channelAddressShow ?View.VISIBLE : View.GONE}" />
+                        <TextView
+                            android:id="@+id/tx_advertising_details_channel_website"
+                            style="@style/AppTheme.TextViewGray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:text="@{viewModel.channelWebsite}"
+                            android:visibility="@{viewModel.channelWebsiteShow ?View.VISIBLE : View.GONE}" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tx_advertising_details_time"
+                        style="@style/AppTheme.TextViewGray"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.advertisingTime)}"
+                        app:layout_constraintBottom_toTopOf="@+id/v_advertising_x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_advertising_details_channel" />
+
+                    <View
+                        android:id="@+id/v_advertising_x"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_weight="1"
+                        android:background="@color/gray_200"
+                        app:layout_constraintBottom_toTopOf="@+id/rv_advertising_details_others"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_advertising_details_channel" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_advertising_details_others"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="@{viewModel.showDetails? View.VISIBLE : View.GONE}"
+                        app:layout_constraintBottom_toTopOf="@+id/v_advertising_x1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/v_advertising_x">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+                    <View
+                        android:id="@+id/v_advertising_x1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/margin_very_small"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginTop="@dimen/margin_very_small"
+                        android:background="@color/gray_200"
+                        app:layout_constraintBottom_toTopOf="@+id/tx_advertising_details_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_advertising_details_others" />
+
+
+                    <TextView
+                        android:id="@+id/tx_advertising_details_content"
+                        style="@style/AppTheme.TextViewBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin_very_small"
+                        android:lineSpacingExtra="10dp"
+                        android:text="@{NumberFormatter.convertDigitsToPersion(viewModel.actContent)}"
+                        android:textSize="@dimen/font_size_large"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/v_advertising_x1" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_advertising_details_buttom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sv_advertising_details">
+
+            <Button
+                android:id="@+id/btn_advertising_details_contact"
+                style="@style/AppTheme.ButtonOrange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:onClick="@{() -> viewModel.onClickContactInfo()}"
+                android:text="@string/contact_info" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert"
+    android:layout_margin="@dimen/margin_normal">
+
+    <TextView
+        style="@style/AppTheme.TextViewWhite"
+        android:id="@+id/tv_alert_title"
+        android:textColor="@color/gray_1000"
+        android:textSize="@dimen/font_size_large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/margin_normal"
+        android:textStyle="bold"
+        android:text="عنوان"/>
+
+    <TextView
+        style="@style/AppTheme.TextViewWhite"
+        android:id="@+id/tv_alert_message"
+        android:layout_below="@id/tv_alert_title"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/gray_1000"
+        android:textStyle="normal"
+        android:text="پیام جهت نمایش به کاربر"/>
+
+
+    <Button
+        style="@style/AppTheme.ButtonOrange"
+        android:id="@+id/btn_alert_ok"
+        android:layout_margin="@dimen/margin_normal"
+        android:layout_below="@id/tv_alert_message"
+        android:text="@string/btn_ok"/>
+
+</RelativeLayout>

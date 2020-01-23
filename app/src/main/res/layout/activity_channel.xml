@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.channel.AdvertisingActivity">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.channel.ChannelViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/white">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_channel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/elevation"
+            android:fitsSystemWindows="true"
+            app:layout_constraintBottom_toTopOf="@+id/v_channel_x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_very_small">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_advettising_toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:layout_marginBottom="@dimen/margin_very_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_channel_search_title">
+
+                    <TextView
+                        android:id="@+id/et_channel_city_search"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:hint="@string/all_city"
+                        android:textSize="@dimen/font_size_middle_small"
+                        android:textStyle="bold"
+                        android:text="@{viewModel.searchCityName}"
+                        android:onClick="@{() -> viewModel.onClickCitySearch()}"
+                        android:layout_marginStart="@dimen/margin_very_very_small"
+                        android:drawableEnd="@drawable/ic_location"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/et_channel_search"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1.5"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_channel_search"
+                        style="@style/AppTheme.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:hint="@string/search"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:layout_marginStart="@dimen/margin_very_very_small"
+                        android:layout_marginEnd="@dimen/margin_very_small"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btn_channel_create"
+                        app:layout_constraintEnd_toStartOf="@+id/et_channel_city_search"
+                        app:layout_constraintHorizontal_weight="2"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/btn_channel_create"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edt_height_s"
+                        android:src="@drawable/ic_add"
+                        android:background="@color/transparent"
+                        android:tint="@color/green_800"
+                        android:onClick="@{() -> viewModel.onClickCreate()}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/et_channel_search"
+                        app:layout_constraintHorizontal_weight="1"
+                        android:text="@string/send" />
+
+
+                </android.support.constraint.ConstraintLayout>
+                <TextView
+                    style="@style/AppTheme.TextViewBlue"
+                    android:id="@+id/txt_channel_search_title"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:background="@color/gray_100"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/padding_small"
+                    android:paddingEnd="@dimen/padding_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_advettising_toolbar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="gone"
+                    android:text="@{viewModel.SearchTitle}"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <View
+            android:id="@+id/v_channel_x"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_channel"
+            app:layout_constraintBottom_toTopOf="@+id/rv_main_book_list"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/gray_200" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_channel_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/menu_buttom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_channel_x">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+        <include
+            android:id="@+id/menu_buttom"
+            layout="@layout/activity_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_main_book_list" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

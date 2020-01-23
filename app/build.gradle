@@ -1,0 +1,153 @@
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.zbam.tajer"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 4
+        versionName "1.0.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // android support libraries
+    compile "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    compile "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    compile "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
+    compile "com.android.support:support-core-utils:$rootProject.supportLibraryVersion"
+    //implementation "com.google.android.material:material:$rootProject.supportMaterial"
+
+
+
+
+
+    // Dependency Injection
+    compile "com.google.dagger:dagger:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger2Version"
+    compile "com.google.dagger:dagger-android-support:$rootProject.dagger2Version"
+
+
+    // network
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofit2Version"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2Version"
+
+    // OkHttp
+    compile "com.squareup.okhttp3:okhttp:$rootProject.okhttp3Version"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3Version"
+
+    // GSON
+    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // reactive
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
+    // logger
+    compile "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // event bus
+    compile "org.greenrobot:eventbus:$rootProject.eventBusVersion"
+
+    // image
+    compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    compile "de.hdodenhof:circleimageview:$rootProject.circleImageViewVersion"
+
+
+    // dependencies for local unit tests
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+    testCompile "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    // UI Testing
+    androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestCompile "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    //Viewmodel
+    implementation "android.arch.lifecycle:extensions:1.0.0-rc1"
+    testImplementation "android.arch.core:core-testing:1.0.0-rc1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-rc1"
+
+    // Transition
+    compile "com.andkulikov:transitionseverywhere:$rootProject.transitionEverywhereVersion"
+
+    // Status Bar Util
+    compile "com.jaeger.statusbarutil:library:$rootProject.statusBarUtilVersion"
+
+    //‌ gif
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.11'
+
+    // progress
+    compile 'com.jackandphantom.android:circularprogressbar:1.2.0'
+
+
+    // DAO
+    compile 'org.greenrobot:greendao:3.2.2'
+
+    // RTL viewPager
+    compile 'com.duolingo.open:rtl-viewpager:1.0.2'
+
+
+    // multidex
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //searchableSpinner
+    compile "com.toptoche.searchablespinner:searchablespinnerlibrary:$rootProject.searchableSpinnerVersion"
+
+    //zoomImage
+   // implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+//    compile 'com.jsibbold:zoomage:1.2.0'
+//    implementation 'com.otaliastudios:zoomlayout:1.3.0'
+
+
+    //gogle analitic
+    compile "com.google.android.gms:play-services-analytics:$rootProject.googleAnalyticsVersion"
+    // crash reporter
+    implementation 'cat.ereza:customactivityoncrash:2.2.0'
+    // get device info
+    implementation 'com.jaredrummler:android-device-names:1.1.7'
+
+
+
+
+    //compile 'pub.devrel:easypermissions:0.2.0'
+
+
+
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+   // compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+
+
+}
+
+configurations.all {
+    resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryVersion"
+    resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+}
+
+task copyDependencies(type: Copy) {
+    from configurations.compile
+    into 'libs'
+}

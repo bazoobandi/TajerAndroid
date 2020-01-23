@@ -1,0 +1,221 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:screenOrientation">portrait</item>
+
+    </style>
+
+
+    <style name="AppTheme.Translucent" parent="AppTheme" >
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+
+    <style name="AppTheme.TextViewWhite">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_100</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="AppTheme.TextViewCreate">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/edt_height_s</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AppTheme.TextViewChannelTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/edt_height_s</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AppTheme.TextViewChannelValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/edt_height_s</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/blue_800</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AppTheme.TextViewBlack">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/black_effective</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+        <item name="android:gravity">start|center_vertical</item>
+    </style>
+
+    <style name="AppTheme.TextViewBlackBold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/black_effective</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+        <item name="android:gravity">start|center_vertical</item>
+    </style>
+
+    <style name="AppTheme.TextViewFooterWhite">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_100</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="AppTheme.TextViewGreen">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/green_800</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="AppTheme.TextViewGray">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="AppTheme.TextViewBlue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/blue_800</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="AppTheme.TextViewRed">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="AppTheme.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edt_height</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/edt_bg</item>
+        <item name="android:padding">@dimen/padding_common</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textCursorDrawable">@color/gray_700</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.EditTextTransparent" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edt_height</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">@dimen/padding_common</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textCursorDrawable">@color/gray_700</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.ButtonBlue" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="android:background">@drawable/btn_green_bg_selector</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/blue_100</item>
+        <item name="android:elevation" tools:targetApi="lollipop">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">@dimen/padding_common</item>
+        <item name="android:paddingBottom">@dimen/padding_common</item>
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+    <style name="AppTheme.ButtonGray" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="android:background">@drawable/btn_gray_bg_selector</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_100</item>
+        <item name="android:elevation" tools:targetApi="lollipop">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">@dimen/padding_common</item>
+        <item name="android:paddingBottom">@dimen/padding_common</item>
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+
+    <style name="AppTheme.ButtonFlat" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="background">@color/transparent</item>
+        <item name="android:elevation" tools:targetApi="lollipop">0dp</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/gray_100</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="AppTheme.ButtonOrange" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+        <item name="android:background">@drawable/btn_orange_bg_selector</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">@dimen/padding_common</item>
+        <item name="android:paddingBottom">@dimen/padding_common</item>
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+    <style name="AppTheme.SwitchCompat"  parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/orange_900</item>
+        <item name="colorControlActivated">@color/orange_900</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleX">1</item>
+        <item name="android:scaleY">1</item>
+    </style>
+
+    <style name="AppTheme.NavigationRow">
+        <item name="android:textColor">@color/gray_900</item>
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:fontFamily">@font/iran_sans_family</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ems">5</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+
+</resources>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.advertisingsearch.AdvertisingSearchActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zbam.tajer.ui.main.advertisingsearch.AdvertisingSearchViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/toolbar_advertising_search"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/ib_advertising_search_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:background="@color/transparent"
+                android:onClick="@{() -> viewModel.onClickBack()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/ib_advertising_search_txt"
+                style="@style/AppTheme.TextViewBlack"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/search"
+                android:textSize="@dimen/font_size_xlarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ib_advertising_search_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_advertising_x"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toolbar_advertising_search"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/gray_200" />
+        <ScrollView
+            android:id="@+id/sv_advertising_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/v_advertising_x"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_very_small"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_advertising_search_title"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/category"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_advertising_search_value"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_advertising_search_value"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/choose"
+                    android:onClick="@{() -> viewModel.openCategoryList()}"
+                    android:text="@{viewModel.categoryName}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ib_advertising_search_delete"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_advertising_search_title" />
+
+                <ImageButton
+                    android:id="@+id/ib_advertising_search_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:background="@color/transparent"
+                    android:onClick="@{() -> viewModel.onClearCategory()}"
+                    android:tint="@color/red_600"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_advertising_search_value"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_advertising_search_title"
+                    app:srcCompat="@drawable/ic_delete" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_advertising_title"
+                    style="@style/AppTheme.TextViewCreate"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height_s"
+                    android:text="@string/advertising_search_title"
+                    app:layout_constraintBottom_toTopOf="@+id/etx_advertising_title_value"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etx_advertising_title_value"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/advertising_title_search_hint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_advertising_title" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txt_advertising_price"
+                style="@style/AppTheme.TextViewCreate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height_s"
+                android:text="@string/price_type"
+                android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}">
+
+                <Spinner
+                    android:id="@+id/sp_advertising_price_type"
+                    style="@style/SpinnerTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:layout_margin="@dimen/margin_very_small"
+                    android:gravity="end"
+                    android:spinnerMode="dialog"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.fieldShowBycategory ? View.VISIBLE : View.GONE}">
+
+                <EditText
+                    android:id="@+id/etx_advertising_price_min_value"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:layout_margin="@dimen/margin_very_small"
+                    android:hint="@string/price_min_hint"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/etx_advertising_price_max_value"
+                    android:inputType="number"
+                    android:visibility="@{viewModel.actPriceShow ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/etx_advertising_price_max_value"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etx_advertising_price_max_value"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edt_height"
+                    android:layout_margin="@dimen/margin_very_small"
+                    android:hint="@string/price_max_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:visibility="@{viewModel.actPriceShow ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/etx_advertising_price_min_value"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/v_advertising_x1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_weight="1"
+                android:background="@color/gray_200" />
+
+            <RadioGroup
+                android:id="@+id/rg_advertising_search_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <RadioButton
+                    android:id="@+id/rg_advertising_search_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/all" />
+
+                <RadioButton
+                    android:id="@+id/rg_advertising_search_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_goods" />
+
+                <RadioButton
+                    android:id="@+id/rg_advertising_search_old"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/old" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/v_advertising_x2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_weight="1"
+                android:background="@color/gray_200" />
+
+            <TextView
+                android:id="@+id/txt_advertising_search_type"
+                style="@style/AppTheme.TextViewCreate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height_s"
+                android:text="@string/price_search_type" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/sw_advertising_search_with_image"
+                    style="@style/AppTheme.SwitchCompat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/advertising_with_image" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/sw_advertising_search_auction"
+                    style="@style/AppTheme.SwitchCompat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/auction1"
+                    />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/sw_advertising_search_immediate"
+                    style="@style/AppTheme.SwitchCompat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/immediate" />
+
+
+            <Button
+                android:id="@+id/btn_advertising_search"
+                style="@style/AppTheme.ButtonBlue"
+                android:layout_marginTop="@dimen/margin_large"
+                android:onClick="@{() -> viewModel.onClickSend()}"
+                android:text="@string/send" />
+        </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

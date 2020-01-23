@@ -1,0 +1,223 @@
+<resources>
+    <string name="app_name">تاجر
+    </string>
+    <string name="unexpected_error_with_url">خطا در برقراری ارتباط</string>
+    <string name="please_wait">لطفا منتظر بمانید</string>
+    <string name="btn_ok">باشه</string>
+    <string name="title_warning">توجه</string>
+    <string name="home">خانه</string>
+    <string name="lookBook">کتاب گردی</string>
+    <string name="search">جستجو</string>
+    <string name="setting">بیشتر</string>
+    <string name="sign_up">ثبت نام</string>
+    <string name="hint_name">نام</string>
+    <string name="family">نام خانوادگی</string>
+    <string name="phoneNumber">شماره همراه</string>
+    <string name="email">ایمیل</string>
+    <string name="hint_email">example@abc.com</string>
+    <string name="password">کلمه عبور</string>
+    <string name="signUpEnter">حساب کاربری دارید. وارد شوید</string>
+    <string name="entry_account">ورود به حساب کاربری</string>
+    <string name="phone_number">شماره همراه</string>
+    <string name="hint_phone_number">09xxxxxxxxx</string>
+    <string name="hint_password">******</string>
+    <string name="login">ورود</string>
+    <string name="forgot_password_question">کلمه عبور خود را فراموش کرده اید؟</string>
+    <string name="sign_up_question">نام کاربری ندارید؟ ثبت نام کنید.</string>
+    <string name="forgot_password">فراموشی رمز عبور</string>
+    <string name="caption_forgot_password">شماره همراه خود را وارد کنید تا لینک تغییر رمز شما را به آن ارسال کنیم</string>
+    <string name="retry">تلاش مجدد</string>
+    <string name="no_permission_title">اعطای مجوز</string>
+    <string name="get_permission_failed">خطا در دسترسی به مجوز</string>
+    <string name="chanels">کانال ها</string>
+    <string name="price">تومان</string>
+    <string name="price_title">قیمت</string>
+    <string name="category">دسته بندی</string>
+    <string name="place">محل</string>
+    <string name="actType">نوع آگهی</string>
+    <string name="advertising_details">مشاهده جزییات</string>
+    <string name="advertising">همه آگهی ها</string>
+    <string name="producYear">سال تولید</string>
+    <string name="kms_driven">میزان کارکرد</string>
+    <string name="insurance_valid_till">مدت اعتبار بیمه (ماه)</string>
+    <string name="insurance_discount">تخفیف بیمه(سال)</string>
+    <string name="brand_name">نام برند</string>
+    <string name="color">رنگ</string>
+    <string name="fualType">نوع سوخت</string>
+    <string name="bodyStatus">وضعیت رنگ بدنه</string>
+    <string name="insideColor">رنگ داخل خودرو</string>
+    <string name="transmission">نوع گیربکس</string>
+    <string name="plaque">نوع پلاک</string>
+    <string name="subModelName">پکیج</string>
+    <string name="accessories_type">نوع</string>
+    <string name="accessoriesType">نوع</string>
+    <string name="agencyManager">نام مدیر</string>
+    <string name="licenseNumber">شماره مجوز</string>
+    <string name="address">آدرس</string>
+    <string name="fax">فاکس</string>
+    <string name="website">آدرس وب سایت</string>
+    <string name="type">نوع</string>
+    <string name="by_sexName">مناسب برای سن</string>
+    <string name="size">سایز</string>
+    <string name="material_name">جنس فریم</string>
+    <string name="alley_width">عرض کوچه(متر)</string>
+    <string name="floor">طبقه</string>
+    <string name="unit_floor">تعداد واحد در طبقه</string>
+    <string name="area">متراژ(متر مربع)</string>
+    <string name="central_antenna">آنتن مرکزی</string>
+    <string name="balcony">بالکن</string>
+    <string name="door_remote">در ریموت</string>
+    <string name="contact_info">مشخصات ثبت کننده آگهی</string>
+    <string name="tel">تلفن</string>
+    <string name="mobile">شماره همراه</string>
+    <string name="msg_dial_intent_not_found">امکان برقراری تماس وجود ندارد، لطفا دوباره تلاش نمایید.</string>
+    <string name="fata_message">پیام فتا : قبل از هر گونه معامله از صحت اطلاعات داده شده مطمئن شوید.</string>
+    <string name="about_us">درباره ما</string>
+    <string name="contact_us">تماس با ما</string>
+    <string name="support">پشتیبانی</string>
+    <string name="advertising_create">ایجاد آگهی</string>
+    <string name="advertising_title">عنوان آگهی</string>
+    <string name="choose">انتخاب کنید</string>
+    <string name="advertising_title_hint">عنوان آگهی را وارد کنید</string>
+    <string name="act_customer">فروشنده کالا یا خدمات هستم</string>
+    <string name="act_seller">خریدار کالا یا خدمات هستم</string>
+    <string name="advertising_image">عکس آگهی</string>
+    <string name="old">کارکرده</string>
+    <string name="new_goods">نو</string>
+    <string name="description">توضیحات</string>
+    <string name="advertising_description_hint">توضیحات آگهی را وارد کنید</string>
+    <string name="price_type">تعیین نوع قیمت گذاری</string>
+    <string name="price_hint">مبلغ را وارد کنید</string>
+    <string name="main_owner">من مالک اصلی هستم</string>
+    <string name="expert">من کارشناس فروش هستم</string>
+    <string name="advertising_special">آگهی خود را به صورت ویژه در آورید</string>
+    <string name="immediate">فوری</string>
+    <string name="auction">حراج و تخفیف دار</string>
+    <string name="free">رایگان</string>
+    <string name="send_advertising">اطلاعات افرادی را که به دنبال کالا و یا خدمات مشابه آگهی من می باشند را برایم ارسال کن</string>
+    <string name="accept_roll">قوانین و مقررات ثبت اگهی را مطالعه و قبول دارم</string>
+    <string name="entry">ثبت</string>
+    <string name="send">ارسال</string>
+    <string name="location">موقعیت</string>
+    <string name="not_accept">لطفا قوانین و مقررات را مطالعه و قبول کنید</string>
+    <string name="check_input_title">لطفا عنوان آگهی را وارد کنید</string>
+    <string name="check_input_category">لطفا دسته بندی را انتخاب نمایید</string>
+    <string name="msg_invalid_email">لطفا ایمیل معتبر وارد کنید</string>
+    <string name="important_input">وارد کردن این فیلد اجباری است</string>
+    <string name="important_input_email">وارد کردن ایمیل اجباری است.</string>
+    <string name="important_input_mobile">وارد کردن شماره همراه اجباری است</string>
+    <string name="msg_invalid_mobile">لطفا شماره همراه معتبر وارد نمایید.</string>
+    <string name="help">درخواست کمک</string>
+    <string name="string_help_text">لطفا راهنمایی نمایید</string>
+    <string name="quit">خروج</string>
+    <string name="settings">تنظیمات</string>
+    <string name="string_choose_image">لطفا عکس را انتخاب نمایید</string>
+    <string name="unable_to_pick_image">شما قادر به انتخاب عکس نیستید</string>
+    <string name="title_upload_progressbar">در حال بارگذاری فایل</string>
+    <string name="title_upload_progressbar_contact">در حال بارگذاری</string>
+    <string name="depot">انباری</string>
+    <string name="parking">پارکینگ</string>
+    <string name="lift">آسانسور</string>
+    <string name="iPhone">آیفون تصویری</string>
+    <string name="building_floor">تعداد طبقات ساختمان</string>
+    <string name="land_area">متراژ زمین(متر مربع)</string>
+    <string name="shop_height">ارتفاع سقف(متر)</string>
+    <string name="land_length">بر زمین(متر)</string>
+    <string name="cabinet_name">نوع کابینت</string>
+    <string name="cooling_name">سرمایش</string>
+    <string name="facing">نما</string>
+    <string name="room_number">تعداد اتاق</string>
+    <string name="floor_covering">کفپوش</string>
+    <string name="heating_name">گرمایش</string>
+    <string name="use_type">موقعیت</string>
+    <string name="view_name">موقعیت</string>
+    <string name="wc_name">سرویس بهداشتی</string>
+    <string name="age_name">سن بنا(سال)</string>
+    <string name="possibilities">امکانات</string>
+    <string name="trip_start_date">تاریخ شروع سفر</string>
+    <string name="trip_end_date">تاریخ پایان سفر</string>
+    <string name="trip_destination">مقصد سفر</string>
+    <string name="trip_stay_time">مدت اقامت</string>
+    <string name="trip_document">مدارک مورد نیاز</string>
+    <string name="trip_type_name">نوع سفر</string>
+    <string name="trip_transport_type">نوع وسیله نقلیه</string>
+    <string name="trip_state">استان</string>
+    <string name="trip_city">شهر مبدا</string>
+    <string name="trip_subject_type">نوع تور</string>
+    <string name="motor_product_year">سال تولید</string>
+    <string name="model">مدل</string>
+    <string name="os_name">سیستم عامل</string>
+    <string name="sims_number">تعداد سیم کارت</string>
+    <string name="min_salary">حداقل حقوق</string>
+    <string name="max_salary">حداکثر حقوق</string>
+    <string name="job_type_name">نوع کار</string>
+    <string name="state">استان</string>
+    <string name="city">شهر</string>
+    <string name="accessories">امکانات جانبی</string>
+    <string name="hotel_facility">امکانات</string>
+    <string name="rank">رتبه</string>
+    <string name="car_type">نوع ماشین</string>
+    <string name="body_status">وضعیت بدنه</string>
+    <string name="bicycle_stop_type">نوع ترمز</string>
+    <string name="accessories_personal">لوازم شخصی</string>
+    <string name="job_location">شهر محل خدمت</string>
+    <string name="call_support">تماس با پشتیبانی</string>
+    <string name="about_us_text">
+        <![CDATA[<html dir="rtl">
+        <p align="justify">
+        <font color="#ca05e90c"> این وب سایت به منظور کمک به هم وطنان گرامی به منظور هر چه آسانتر شدن فرآیند خرید و فروش کالا و خدمات راه اندازی شده است. تیم تاجر سعی کرده است تا با استفاده از امکاناتی که اینترنت فراهم آورده است خریداران و فروشندگان را هرچه بیشتر به هم نزدیک کرده و امکان ارائه کالاهای مختلف را با کمترین هزینه برای کاربران فراهم آورد. امید است که بتوانیم با ارائه خدمات مناسب ، کاربران سایت را به طور روز افزون راضی و شاد نگه داریم. مهمترین خدماتی که از طریق این سایت ارائه می شود عبارتند از :      ثبت آگهی رایگان فروش کالا     ثبت آگهی رایگان جهت خرید کالا   تیم وب سایت تاجر همواره نیازمند دریافت نظرات و پیشنهادات شما کاربران محترم در جهت بهبود هر چه بیشتر خدمات ارائه شده توسط سایت می باشد.لذا شما می توانید برای ارسال نظرات و پیشنهادات خود به بخش تماس با ما مراجعه فرمایید </font>
+        </p>
+        </html>]]>
+    </string>
+
+    <string name="rules">
+        <![CDATA[<html dir="rtl">
+        <p align="justify">
+        <font color="#ca05e90c">
+
+به منظور استفاده و ثبت آگهی در سایت تاجر رعایت قوانین و مقررات زیر الزامی می باشد و کاربران محترم با ثبت آگهی موافقت خود را با قوانین و مقررات زیر اعلام می نمایند
+
+    این وب سایت تحت قوانین و مقرارت جمهوری اسلامی ایران فعالیت می نماید.لذا کلیه کاربران محترم سایت می بایست فعالیتهای خود را در چهارچوب قوانین و مقررات رسمی کشور به انجام رسانند.
+    کلیه آگهی های دریافتی قبل از نمایش در سایت توسط تیم تاجر بررسی و در صورت تایید منتشر خواهند شد.
+    درج هرگونه آگهی مخالف قوانین و مقررات کشور در وب سایت ممنوع بوده و پیگرد قانونی خواهد داشت.
+    مسئولیت قانونی محتوای آگهی درج شده در سایت بر عهده ثبت کننده آگهی می باشد.
+    مسئولیت استفاده از آگهی‌های این سایت بر عهدهٔ کاربر است و تاجر هیچ تعهدى در قبال خسارات مستقیم، اتفاقى، تبعى، غیرمستقیم و کیفرى، ناشى از دسترسى و استفادهٔ شما از این سایت ندارد.
+    تاجر حق ویرایش متن آگهی های ارسالی را جهت بهبود و حذف ایرادات متن آگهی را برای خود محفوظ می داند.
+    درج هر گونه توضیحات غیر مرتبط با آگهی در متن آگهی ممنوع می باشد.
+
+ </font>
+        </p>
+        </html>]]>
+    </string>
+    <string name="opinion">متن پیام</string>
+    <string name="product_type">نوع</string>
+    <string name="condition_name">شرایط</string>
+    <string name="age_furniture">مدت زمان استفاده</string>
+    <string name="all_city">همه شهرها</string>
+    <string name="rule">قوانین و مقررات</string>
+    <string name="advertising_title_search_hint">جستجو در عنوان یا متن آگهی</string>
+    <string name="advertising_search_title">جستجو در عنوان یا متن آگهی</string>
+    <string name="price_max_hint">تا قیمت (تومان)</string>
+    <string name="price_min_hint">شروع قیمت از (تومان)</string>
+    <string name="all">همه</string>
+    <string name="price_search_type">جستجو فقط در آگهی های</string>
+    <string name="advertising_with_image">عکس دار</string>
+    <string name="auction1">حراجی</string>
+    <string name="title_new_apk">نسخه جدید برنامه را دانلود کنید</string>
+    <string name="error">خطایی رخ داده است.</string>
+    <string name="re_start">شروع مجدد برنامه</string>
+    <string name="channel">فروشگاه ها</string>
+    <string name="channel_details">جزییات فروشگاه</string>
+    <string name="channel_address">آدرس فروشگاه :</string>
+    <string name="channel_tel">تلفن فروشگاه :</string>
+    <string name="channel_mobile">تلفن همراه :</string>
+    <string name="channel_desc">موضوع فروشگاه :</string>
+    <string name="channel_email">ایمیل فروشگاه :</string>
+    <string name="channel_website">وب سایت فروشگاه :</string>
+    <string name="channel_id">آی دی فروشگاه</string>
+    <string name="show_details">مشاهده محتوای فروشگاه</string>
+    <string name="join_channel">عضویت در فروشگاه</string>
+    <string name="channel_create">ایجاد فروشگاه</string>
+    <string name="channel_create_title">نام فروشگاه</string>
+    <string name="channel_username">نام کاربری</string>
+</resources>
