@@ -155,10 +155,7 @@ public abstract class BaseActivity<T extends ViewDataBinding,V extends BaseViewM
     public void openUrlAppIntent(String apkURL){
         try {
 
-//            Intent intent = new Intent(Intent.ACTION_VIEW);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//            intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + apkURL)), "application/vnd.android.package-archive");
-//            startActivity(intent);
+
 
             //get destination to update file and set Uri
             //TODO: First I wanted to store my update .apk file on internal storage for my app but apparently android does not allow you to open and install
