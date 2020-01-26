@@ -27,9 +27,10 @@ public class AppConstants {
     public static final String HEADER_AUTHORIZATION_KEY = "Authorization" ;
     public static final String TAG = "===>>>";
 
+
     //url
    // public static final String BASE_URL = "http://tajer.mobi/";
-    public static final String BASE_URL = "http://95.216.51.88:80/";
+    public static final String BASE_URL = "http://5.159.51.42:8085/";
 
     public static final String PREF_NAME = "com_tajet_pref";
 
