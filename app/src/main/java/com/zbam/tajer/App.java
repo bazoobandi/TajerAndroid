@@ -70,6 +70,8 @@ public class App extends Application implements HasActivityInjector{
         return activityDispatchingAndroidInjector;
     }
 
+
+
     /**
      * Gets the default {@link Tracker} for this {@link Application}.
      * @return tracker

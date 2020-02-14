@@ -27,14 +27,14 @@ android {
 
 dependencies {
     // android support libraries
-    compile "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
-    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:design:$rootProject.supportLibraryVersion"
-    compile "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
-    compile "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
-    compile "com.android.support:support-core-utils:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-core-utils:$rootProject.supportLibraryVersion"
     //implementation "com.google.android.material:material:$rootProject.supportMaterial"
 
 
@@ -42,48 +42,38 @@ dependencies {
 
 
     // Dependency Injection
-    compile "com.google.dagger:dagger:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
     annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger2Version"
-    compile "com.google.dagger:dagger-android-support:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger2Version"
 
 
     // network
-    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofit2Version"
-    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2Version"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit2Version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2Version"
 
     // OkHttp
-    compile "com.squareup.okhttp3:okhttp:$rootProject.okhttp3Version"
-    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3Version"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp3Version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3Version"
 
     // GSON
-    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     // reactive
-    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
-    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
 
     // logger
-    compile "com.jakewharton.timber:timber:$rootProject.timberVersion"
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
     // event bus
-    compile "org.greenrobot:eventbus:$rootProject.eventBusVersion"
+    implementation "org.greenrobot:eventbus:$rootProject.eventBusVersion"
 
     // image
-    compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
-    compile "de.hdodenhof:circleimageview:$rootProject.circleImageViewVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    implementation "de.hdodenhof:circleimageview:$rootProject.circleImageViewVersion"
 
 
-    // dependencies for local unit tests
-    testCompile "junit:junit:$rootProject.ext.junitVersion"
-    testCompile "org.mockito:mockito-core:$rootProject.mockitoVersion"
-    testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
-
-    // UI Testing
-    androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
-    androidTestCompile "org.mockito:mockito-core:$rootProject.mockitoVersion"
-    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
 
     //Viewmodel
     implementation "android.arch.lifecycle:extensions:1.0.0-rc1"
@@ -91,30 +81,30 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0-rc1"
 
     // Transition
-    compile "com.andkulikov:transitionseverywhere:$rootProject.transitionEverywhereVersion"
+    implementation "com.andkulikov:transitionseverywhere:$rootProject.transitionEverywhereVersion"
 
     // Status Bar Util
-    compile "com.jaeger.statusbarutil:library:$rootProject.statusBarUtilVersion"
+    implementation "com.jaeger.statusbarutil:library:$rootProject.statusBarUtilVersion"
 
     //‌ gif
-    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.11'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.11'
 
     // progress
-    compile 'com.jackandphantom.android:circularprogressbar:1.2.0'
+    implementation 'com.jackandphantom.android:circularprogressbar:1.2.0'
 
 
     // DAO
-    compile 'org.greenrobot:greendao:3.2.2'
+    implementation 'org.greenrobot:greendao:3.2.2'
 
     // RTL viewPager
-    compile 'com.duolingo.open:rtl-viewpager:1.0.2'
+    implementation 'com.duolingo.open:rtl-viewpager:1.0.2'
 
 
     // multidex
     implementation 'com.android.support:multidex:1.0.3'
 
     //searchableSpinner
-    compile "com.toptoche.searchablespinner:searchablespinnerlibrary:$rootProject.searchableSpinnerVersion"
+    implementation "com.toptoche.searchablespinner:searchablespinnerlibrary:$rootProject.searchableSpinnerVersion"
 
     //zoomImage
    // implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
@@ -123,7 +113,7 @@ dependencies {
 
 
     //gogle analitic
-    compile "com.google.android.gms:play-services-analytics:$rootProject.googleAnalyticsVersion"
+    implementation "com.google.android.gms:play-services-analytics:$rootProject.googleAnalyticsVersion"
     // crash reporter
     implementation 'cat.ereza:customactivityoncrash:2.2.0'
     // get device info
