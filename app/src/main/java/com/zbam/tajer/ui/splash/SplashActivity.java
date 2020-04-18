@@ -2,7 +2,14 @@ package com.zbam.tajer.ui.splash;
 
 import android.Manifest;
 import android.app.ActivityManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.net.wifi.SupplicantState;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -37,6 +44,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding,SplashVie
 
     @Inject
     SplashViewModel mSplashViewModel;
+
 
     ActivitySplashBinding mActivitySplashBinding;
 
@@ -75,6 +83,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding,SplashVie
             }
         });
     }
+
+
 
     public void startApp()
     {
@@ -156,6 +166,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding,SplashVie
     protected void onResume(){
         super.onResume();
     }
+
+
 
     @Override
     protected void onStart() {
